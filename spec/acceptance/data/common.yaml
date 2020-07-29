@@ -1,0 +1,7 @@
+users::users:
+  kitchen:
+    shell: /bin/bash
+    sshkey: ignored
+    nodeaccess:
+      - regexp: '.*'
+        groups: [sudo]

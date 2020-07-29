@@ -1,0 +1,31 @@
+---
+version: 5
+
+defaults:
+  datadir: data
+
+hierarchy:
+  - name: "Hiera-vault lookup"
+    lookup_key: hiera_vault
+    options:
+      confine_to_keys:
+        - '^vault::secret::[a-zA-Z0-9_-].+$'
+      strip_from_keys:
+        - 'vault::secret::'
+      ssl_verify: false
+      # FIXME: 
+      # token: path/to/your/vault/token
+      # address: https://your.vault.url:8200
+      mounts:
+        puppet:
+          - nodes/%{::trusted.certname}
+          - roles/%{::role}
+          - common
+
+  - name: "Yaml backend"
+    data_hash: yaml_data
+    paths:
+      - "nodes/%{::trusted.certname}.yaml"
+      - "roles/%{::role}.yaml"
+      - "virtual/%{::virtual}.yaml"
+      - 'common.yaml'

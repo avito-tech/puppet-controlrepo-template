@@ -1,0 +1,12 @@
+---
+version: 5
+
+defaults:
+  datadir: hiera
+
+hierarchy:
+  - name: "Yaml backend"
+    data_hash: yaml_data
+    paths: 
+      - "suites/%{suite}.yaml"
+      - "common.yaml"
