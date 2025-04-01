@@ -120,7 +120,7 @@ class profile::k8s (
 ### 2.2 Профили
 > Best practices по профилям описаны в статье
 >
-> - [Puppet Code Abstraction - Profiles](https://github.com/puppetlabs/best-practices/blob/master/puppet-code-abstraction-profiles)
+> - [Puppet Code Abstraction - Profiles](https://github.com/puppetlabs/best-practices/blob/master/puppet-code-abstraction-profiles.md)
 
 Профиль – это абстракция, класс-обёртка над модулями, которая реализует какой то стек технологий. Может включать в себя несколько компонентов и произвольные ресурсы. Профиль реализует свой интерфейс, для того, чтобы свести сложный интерфейс модулей к более простому и специфичному.
 
